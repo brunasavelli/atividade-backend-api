@@ -2,6 +2,10 @@ const express = require("express");
 const router = express.Router();
 const heroisController = require("../controllers/heroisController");
 // const upload = require("./../config/upload.js");
+const apiKeyMiddleware = require("./../config/apiKey");
+
+router.use(apiKeyMiddleware);
+
 
 /**
  * @swagger
