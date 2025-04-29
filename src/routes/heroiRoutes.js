@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const heroisController = require("../controllers/heroisController");
-// const upload = require("./../config/upload.js");
-const apiKeyMiddleware = require("./../config/apiKey");
+const upload = require("../config/upload.js");
+// const apiKeyMiddleware = require("./../config/apiKey");
 
-router.use(apiKeyMiddleware);
+// router.use(apiKeyMiddleware);
 
 
 /**
@@ -60,7 +60,7 @@ router.get("/herois/:id", heroisController.getHeroiById);
  *       201:
  *         description: Herói criado com sucesso
  */
-router.post("/herois", heroisController.createHeroi);
+router.post("/herois", upload.single("photo"),heroisController.createHeroi);
 
 /**
  * @swagger

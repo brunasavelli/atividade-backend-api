@@ -14,6 +14,8 @@ CREATE TABLE herois (
     editora_id INTEGER REFERENCES editoras(id) ON DELETE SET NULL
 );
 
+ALTER TABLE herois ADD COLUMN photo TEXT;
+
 INSERT INTO editoras (name, criador) VALUES 
 ('DC Comics', 'Malcolm Wheeler-Nicholson'),
 ('Marvel Comics', 'Martin Goodman'),
